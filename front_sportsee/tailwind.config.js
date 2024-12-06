@@ -4,7 +4,14 @@ module.exports = {
   theme: {
     extend: {
       backgroundColor:{
-        'color-card':'#FBFBFB'
+        'color-card':'#FBFBFB',
+        'color-average-bg':'#FF0000',
+        'color-activity-bg':'#FBFBFB'
+      },
+      width:{
+        '20%':'19%',
+        '80%':'79%',
+        'litle_chart':'28%'
       }
     },
   },

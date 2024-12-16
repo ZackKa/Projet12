@@ -7,8 +7,8 @@ import { dataActivityFetch } from './Fetch/dataActivityFetch'
 import { dataAverageSessionsFetch } from './Fetch/dataAverageSessionsFetch'
 import { dataPerformanceFetch } from './Fetch/dataPerformanceFetch'
 
-const useMock = process.env.REACT_APP_USE_MOCK;
-const urlApi = process.env.REACT_APP_URL_API
+const USE_MOCK = process.env.REACT_APP_USE_MOCK;
+const URL_API = process.env.REACT_APP_URL_API
 
 
 export function getUserData(id) {
@@ -35,28 +35,32 @@ async function getDatas(contexte, id) {
     try {
         switch (contexte) {
             case "user":
-                if (useMock) {
+                if (USE_MOCK === "1") {
+                    console.log("mcok", typeof(USE_MOCK))
+                    console.log(USE_MOCK)
                     return mockDataUsers.find((user) => user.id === parseInt(id)); // Retourne directement les données du mock
                 }
-                return await getUsersFetch(id, urlApi);
+                    console.log("mcok", typeof(USE_MOCK))
+                    console.log(USE_MOCK)
+                return await getUsersFetch(id, URL_API);
             
             case "activity":
-                if (useMock) {
+                if (USE_MOCK === "1") {
                     return mockDataActivity.find((user) => user.userId === parseInt(id));
                 }
-                return await dataActivityFetch(id, urlApi);
+                return await dataActivityFetch(id, URL_API);
 
             case "average":
-                if (useMock) {
+                if (USE_MOCK === "1") {
                     return mockDataAverage.find((user) => user.userId === parseInt(id));
                 } 
-                return await dataAverageSessionsFetch(id, urlApi);
+                return await dataAverageSessionsFetch(id, URL_API);
 
             case "performance":
-                if (useMock) {
-                    return mockDataPerformance.find((user) => user.id === parseInt(id));
+                if (USE_MOCK === "1") {
+                    return mockDataPerformance.find((user) => user.userId === parseInt(id));
                 }
-                return await dataPerformanceFetch(id, urlApi);
+                return await dataPerformanceFetch(id, URL_API);
 
             default:
                 return null; // Retourne null par défaut si le contexte ne correspond pas

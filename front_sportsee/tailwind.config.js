@@ -9,9 +9,14 @@ module.exports = {
         'color-activity-bg':'#FBFBFB'
       },
       width:{
-        '20%':'19%',
-        '80%':'79%',
-        'litle_chart':'28%'
+        'aside_w':'25%',
+        'activity_w':'72%',
+        'little_chart':'180px',
+      },
+      height:{
+        'little_chart_h':'180px',
+        'activity_h':'290px',
+        'principal':'470px'
       }
     },
   },

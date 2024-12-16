@@ -1,7 +1,8 @@
 export async function getUsersFetch(id, urlApi) {
     try {
+        // Effectue une requête fetch vers l'API avec l'ID de l'utilisateur pour récupérer les données
         const response = await fetch(`${urlApi}/user/${id}`);
-        const data = await response.json();
+        const data = await response.json(); // Transforme la réponse en format JSON
         console.log("Données fetch utilisateur:", data.data);
         return data.data; // Retourne les données après la récupération
     } catch (error) {

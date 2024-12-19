@@ -9,6 +9,10 @@ import ObjectifChart from '../../components/ObjectifChart';
 import ActivityChart from '../../components/ActivityChart';
 import PerformanceChart from '../../components/PerformanceChart';
 import ScoreChart from '../../components/ScoreChart';
+import { UserModels } from '../../datas/Model/UserModels.jsx';
+import { ActivityModel } from '../../datas/Model/ActivityModel.jsx'
+import { AverageModel } from '../../datas/Model/AverageModel.jsx'
+import { PerformanceModel } from '../../datas/Model/PerformanceModel.jsx'
 
 function Profil() {
   const { id } = useParams(); // Récupérer le paramètre `id` depuis l'URL
@@ -27,8 +31,10 @@ function Profil() {
   useEffect(() => {
     getUserData(id) // Appel API pour récupérer les données de l'utilisateur
       .then(data => {
-        setUser(data);// Mettre à jour l'état avec les données récupérées
-        setLoadingUser(false); // Données utilisateur prêtes.
+        if (data) {
+          setUser(new UserModels(data));// Mettre à jour l'état avec les données récupérées
+          setLoadingUser(false); // Données utilisateur prêtes.
+        }
       })
       .catch(error => {
         console.error("Erreur lors de la récupération des données :", error);
@@ -39,8 +45,10 @@ function Profil() {
   useEffect(() => {
     getAverageData(id)
       .then(data => {
-        setDataAverage(data);
-        setLoadingAverage(false); // Données moyennes prêtes
+        if (data) {
+          setDataAverage(new AverageModel(data));
+          setLoadingAverage(false); // Données moyennes prêtes
+        }
       })
       .catch(error => {
         console.error("Erreur lors de la récupération des données :", error);
@@ -51,8 +59,10 @@ function Profil() {
   useEffect(() => {
     getActivityData(id)
       .then(data => {
-        setDataActivity(data);
-        setLoadingActivity(false); // Données d'activité prêtes
+        if (data) {
+          setDataActivity(new ActivityModel(data));
+          setLoadingActivity(false); // Données d'activité prêtes
+        }
       })
       .catch(error => {
         console.error("Erreur lors de la récupération des données :", error);
@@ -63,8 +73,10 @@ function Profil() {
   useEffect(() => {
     getPerformanceData(id)
       .then(data => {
-        setDataPerformance(data);
-        setLoadingPerformance(false); // Données de performance prêtes
+        if (data) {
+          setDataPerformance(new PerformanceModel(data));
+          setLoadingPerformance(false); // Données de performance prêtes
+        }
       })
       .catch(error => {
         console.error("Erreur lors de la récupération des données :", error);

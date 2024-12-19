@@ -7,6 +7,7 @@ import { dataActivityFetch } from './Fetch/dataActivityFetch'
 import { dataAverageSessionsFetch } from './Fetch/dataAverageSessionsFetch'
 import { dataPerformanceFetch } from './Fetch/dataPerformanceFetch'
 
+
 const USE_MOCK = process.env.REACT_APP_USE_MOCK;
 const URL_API = process.env.REACT_APP_URL_API
 
@@ -40,8 +41,8 @@ async function getDatas(contexte, id) {
                     console.log(USE_MOCK)
                     return mockDataUsers.find((user) => user.id === parseInt(id)); // Retourne directement les données du mock
                 }
-                    console.log("mcok", typeof(USE_MOCK))
-                    console.log(USE_MOCK)
+                console.log("mcok", typeof(USE_MOCK))
+                console.log(USE_MOCK)
                 return await getUsersFetch(id, URL_API);
             
             case "activity":

@@ -2,7 +2,7 @@ import { Cell, Pie, PieChart, ResponsiveContainer } from 'recharts';
 
 function ScoreChart(props) {
     // Récupérer automatiquement 'todayScore' ou 'score' en fonction de ce qui existe dans props.user
-    const donnee = props.user.todayScore !== undefined ? props.user.todayScore : props.user.score;
+    const donnee = props.user.todayScore;
     // Calculer l'angle du score car les données sont de 0 à 1
     const scoreAngle = donnee * 360;
 

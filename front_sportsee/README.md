@@ -68,3 +68,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+# VARIABLE D'ENVIRONNEMENT
+
+REACT_APP_USE_MOCK
+
+Valeur possible : 0 ou 1
+Description : Cette variable est utilisée pour déterminer si l'application doit utiliser des données simulées (mocked) ou des données réelles provenant d'une API.
+    Si la valeur est 0, l'application utilise les données réelles de l'API.
+    Si la valeur est 1, l'application utilise des données simulées.
+
+REACT_APP_URL_API
+
+Valeur : 'http://localhost:3000'
+Description : Cette variable définit l'URL de l'API que l'application utilise pour récupérer ou envoyer des données.

@@ -94,10 +94,6 @@ function ActivityChart(props) {
           <Bar yAxisId="right" dataKey="calories" fill="#E60000" barSize={10}radius={[10, 10, 0, 0]}/>
         </BarChart>
       </ResponsiveContainer>
-  
-        <h2 className='absolute top-[5%] left-[8%] text-white opacity-50 text-[10px] font-bold z-10 w-[50%]'>
-          Durée moyenne des sessions
-        </h2>
       </div>
     );
   }

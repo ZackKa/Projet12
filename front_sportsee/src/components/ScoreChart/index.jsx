@@ -33,7 +33,7 @@ function ScoreChart(props) {
                 </div>
             <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[66%] h-[66%] bg-white rounded-full flex items-center justify-center text-black'>
                 <div className='text-center'>
-                    <div className='text-xl font-bold'>{(donnee * 100).toFixed(0)}%</div>
+                    <div className='text-xl font-bold'>{(donnee * 100).toFixed(0)}%</div> {/*toFixed(0) arrondit ce pourcentage à un entier, supprimant ainsi les décimales*/}
                     <div className='text-sm'>de votre objectif</div>
                 </div>
             </div>
